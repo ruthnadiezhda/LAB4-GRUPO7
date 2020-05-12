@@ -16,11 +16,33 @@
         <table class="table">
         <thead>
         <tr>
-            <!-- COMPLETAR-->
+            <!--<th>#</th>-->
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cargo</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+            <th>Anhos Trabajando</th>
+            <th>Meses Trabajando</th>
+
+            <!--<th>¿Descontinuado?</th>
+            <th></th>
+            <th></th>
+            COMPLETAR-->
         </tr>
         </thead>
         <tbody>
         <tr th:each="historia : ${listaHistorial}">
+
+            <td th:text="${historia.nombre}"></td>
+            <td th:text="${historia.apellido}"></td>
+            <td th:text="${historia.cargo}"></td>
+            <td th:text="${historia.inicio}"></td>
+            <td th:text="${historia.fin}"></td>
+            <td th:text="${historia.anhos}"></td>
+            <td th:text="${historia.meses}"></td>
+
+
         <!-- COMPLETAR-->
         </tr>
         </tbody>
