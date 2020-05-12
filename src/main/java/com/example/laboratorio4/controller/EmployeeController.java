@@ -97,13 +97,6 @@ public class EmployeeController {
 
     }
 
-    @PostMapping("/search")
-    public String buscar (@RequestParam("searchField") String searchField,
-                          Model model){
 
-        model.addAttribute("listaHistorial", employeesRepository.obtenerResumenEmpleado());
-        return "history/lista";
-        //COMPLETAR
-    }
 
 }
