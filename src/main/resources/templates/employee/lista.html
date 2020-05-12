@@ -11,11 +11,16 @@
 <body>
     <div class="container">
         <h1>Lista de Empleados</h1>
-        <a class="btn btn-primary mt-4 mb-4" th:href="@{}">Nuevo Empleado</a>  <!-- COMPLETAR -->
-        <!-- COMPLETAR -->
+        <a class="btn btn-primary mt-4 mb-4" th:href="@{/employee/new}">Nuevo Empleado</a>
+        <form class="input-group mb-lg-3" method="post" th:action="@{'/employee/search'}">
+            <input type="text" class="form-control" placeholder="Texto para buscar" name="search">
+            <div class="input-group-append">
+                <button class="btn btn-outline-primary ml-2 mr-2" type="submit">Buscar</button>
+            </div>
         </form>
-        <!-- COMPLETAR -->
-             <table class="table">  <!-- COMPLETAR -->
+        <div th:if="${msg != null}" th:text="${msg}" class="alert alert-success" role="alert"></div>
+        <div th:if="${listaEmployee.size() == 0}" class="alert alert-success" role="alert">No hay resultados para la búsqueda</div>
+             <table class="table"th:if="${listaEmployee.size() != 0}">  <!-- COMPLETAR -->
                 <thead>
                 <tr>
                     <th>#</th>

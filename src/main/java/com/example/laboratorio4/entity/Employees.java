@@ -1,6 +1,7 @@
 package com.example.laboratorio4.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.Date;
 
 
@@ -10,20 +11,31 @@ public class Employees {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @NotBlank
     Integer employee_id;
+    @NotBlank
     String first_name;
     @Column(nullable = false)
+    @NotBlank
     String last_name;
     @Column(nullable = false)
+    @NotBlank
+    @Email
     String email;
+    @NotBlank
+    @Size(min=8)
     private String password;
+    @NotBlank
     String phone_number;
     @Column(nullable = false)
     Date hire_date;
     @ManyToOne
     @JoinColumn(nullable = false, name="job_id")
     Jobs job;
+    @Positive
+    @Digits(integer=8, fraction=2)
     Double salary;
+    @Digits(integer=2, fraction=2)
     Double commission_pct;
     Integer manager_id;
     @ManyToOne
