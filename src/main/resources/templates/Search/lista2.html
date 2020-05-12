@@ -9,17 +9,30 @@
     <title>Empleados con Mayor Salario</title>
 </head>
 <body>
-<div class="container">
-    <h1>Empleados con Mayor Salario en la Empresa</h1>
-    <!-- COMPLETAR -->
-    <table class="table">
-        <thead>
-        <!-- COMPLETAR -->
-        </thead>
-        <tbody>
-        <!-- COMPLETAR -->
-        </tbody>
-    </table>
-</div>
+<h2>Empleados con mayor salario de la empresa</h2>
+
+<div th:if="${msg != null}" th:text="${msg}" class="alert alert-success" role="alert"></div>
+<form method="post" th:action="@{/search/búsqueda}">
+    <input name="sueldo" id="sueldo" class="form-control mb-3" type="text" placeholder="Ingrese sueldo para filtrar" />
+</form>
+<a class="btn btn-primary mt-4 mb-4" th:href="@{'/search/listar'}">Limpiar</a>
+<a class="btn btn-primary mt-4 mb-4" th:href="@{'/search'}">Regresar</a>
+
+<table class="table table-sm">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Fecha de Inicio</th>
+        <th>Fecha de Fin</th>
+        <th>Puesto</th>
+    </tr>
+    <tr th:each="item, info : ${lista2}">
+        <td th:text="${item.getNombre()}"></td>
+        <td th:text="${item.getApellido()}"></td>
+        <td th:text="${item.getInicio()}"></td>
+        <td th:text="${item.getFin()}"></td>
+        <td th:text="${item.getPuesto()}"></td>
+    </tr>
+</table>
 </body>
 </html>
