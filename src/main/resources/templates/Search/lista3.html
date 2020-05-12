@@ -9,17 +9,29 @@
     <title>Lista de Empleados</title>
 </head>
     <body>
-        <div class="container">
-        <h1>Empleados por Departamento</h1>
-            <table class="table">
-                <thead>
-                <!-- COMPLETAR -->
-                </thead>
-                <tbody>
-                <!-- COMPLETAR -->
-                </tr>
-                </tbody>
-            </table>
-        </div>
+    <h2>Reporte de salario máximo por departamento</h2>
+
+    <div th:if="${msg != null}" th:text="${msg}" class="alert alert-success" role="alert"></div>
+
+
+    <a class="btn btn-primary mt-4 mb-4" th:href="@{'/'}">Regresar</a>
+
+    <table class="table table-sm">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Inicio</th>
+            <th>Fecha de Fin</th>
+            <th>Puesto</th>
+        </tr>
+        <tr th:each="item, info : ${lista3}">
+            <td th:text="${item.getIdDepartment()}"></td>
+            <td th:text="${item.getDepartamento()}"></td>
+            <td th:text="${item.getPromedio()}"></td>
+            <td>
+                <a class="btn btn-primary mt-4 mb-4" th:href="@{'/search/listar'}">Limpiar</a>
+            </td>
+        </tr>
+    </table>
     </body>
 </html>
