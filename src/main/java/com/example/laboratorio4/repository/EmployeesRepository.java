@@ -1,5 +1,6 @@
 package com.example.laboratorio4.repository;
 
+import com.example.laboratorio4.dto.EmpleadoResumen;
 import com.example.laboratorio4.entity.Employees;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -22,6 +23,7 @@ public interface EmployeesRepository extends JpaRepository<Employees,Integer> {
             "from locations lo\n" +
             "where lo.city = ?1));" , nativeQuery = true)
     List<Employees> obtenerBusquedaEmpleado(String busqueda);
+
 
 
 
