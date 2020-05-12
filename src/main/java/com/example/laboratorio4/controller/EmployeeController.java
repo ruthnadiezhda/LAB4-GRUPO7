@@ -32,7 +32,7 @@ public class EmployeeController {
 
     @GetMapping(value = {"","/"})
     public String listaEmployee(Model model){
-        model.addAttribute("listaEmployeea", employeesRepository.findAll());
+        model.addAttribute("listaEmployee", employeesRepository.findAll());
         model.addAttribute("listaJobs", jobsRepository.findAll());
         model.addAttribute("listaDepartments", departmentsRepository.findAll());
         return "employee/lista";
