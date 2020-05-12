@@ -18,7 +18,9 @@
                 <button class="btn btn-outline-primary ml-2 mr-2" type="submit">Buscar</button>
             </div>
         </form>
-             <table class="table">  <!-- COMPLETAR -->
+        <div th:if="${msg != null}" th:text="${msg}" class="alert alert-success" role="alert"></div>
+        <div th:if="${listaEmployee.size() == 0}" class="alert alert-success" role="alert">No hay resultados para la búsqueda</div>
+             <table class="table"th:if="${listaEmployee.size() != 0}">  <!-- COMPLETAR -->
                 <thead>
                 <tr>
                     <th>#</th>
