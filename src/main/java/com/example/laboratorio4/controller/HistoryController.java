@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class HistoryController {
 
     @Autowired
-    HistoryRepository historyRepository
+    HistoryRepository historyRepository;
 
     @GetMapping(value = {"","/"})
     public String historialEmpleado(@RequestParam("searchField") String searchField,
