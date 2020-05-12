@@ -4,7 +4,7 @@ package com.example.laboratorio4.dto;
 
 public interface SalarioMaximoPorDepartamentoDto {
 
-    Integer getId();
+    Integer getIdDepartment();
     String getDepartamento();
     Integer getPromedio();
 

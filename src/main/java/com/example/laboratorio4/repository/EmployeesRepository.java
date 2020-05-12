@@ -35,7 +35,7 @@ public interface EmployeesRepository extends JpaRepository<Employees,Integer> {
 
 
 
-    @Query(value = "select d.department_id as id,d.department_name as departamento, avg(e.salary) as promedio" +
+    @Query(value = "select d.department_id as idDepartment,d.department_name as departamento, avg(e.salary) as promedio" +
             "FROM employees e\n" +
             "inner join departments d on (d.department_id = e.department_id)\n" +
             "group by departamento\n", nativeQuery = true)

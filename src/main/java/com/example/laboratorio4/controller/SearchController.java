@@ -32,10 +32,9 @@ public class SearchController {
     }
 
     @GetMapping(value = "/vistaDoble")
-    public String cantidadEmpleadosPorPais (){
-
-        //COMPLETAR
-        return "/Search/salario";
+    public String dostablas (Model model){
+        model.addAttribute("lista3",employeeRepository.obtenerSalarioMaximoPorDepartamente());
+        return "/Search/lista3";
     }
 
     @GetMapping("/listar")
